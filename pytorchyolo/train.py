@@ -98,6 +98,7 @@ def run():
     # ############
 
     model = load_model(args.model, args.pretrained_weights)
+    print(model)
 
     # Print model
     if args.verbose:
@@ -158,6 +159,7 @@ def run():
             batches_done = len(dataloader) * epoch + batch_i
 
             imgs = imgs.to(device, non_blocking=True)
+            
             targets = targets.to(device)
 
             outputs = model(imgs)
